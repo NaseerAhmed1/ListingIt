@@ -1,0 +1,41 @@
+{
+  "uid" : "b90aa23703f9743c",
+  "name" : "olx is launched successfully",
+  "title" : "olx is launched successfully",
+  "time" : {
+    "start" : 1535797769826,
+    "stop" : 1535797783213,
+    "duration" : 13387
+  },
+  "summary" : {
+    "attachments" : 1,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "86812a38f0f78870",
+    "name" : "olx searched listings itrator",
+    "title" : "olx searched listings itrator"
+  },
+  "steps" : [ ],
+  "attachments" : [ {
+    "title" : "Screenshot",
+    "source" : "b494aaa5-9979-410d-bf94-291a39554fbc-attachment.png",
+    "type" : "image/png",
+    "size" : 144564,
+    "uid" : "afff4fbc832eeb68"
+  } ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "suite-name",
+    "value" : "olx searched listings itrator"
+  }, {
+    "name" : "suite-title",
+    "value" : "olx searched listings itrator"
+  } ],
+  "parameters" : [ ]
+}

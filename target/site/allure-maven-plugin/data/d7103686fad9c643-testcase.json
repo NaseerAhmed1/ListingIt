@@ -1,0 +1,41 @@
+{
+  "uid" : "d7103686fad9c643",
+  "name" : "Search is made successfully",
+  "title" : "Search is made successfully",
+  "time" : {
+    "start" : 1535797783214,
+    "stop" : 1535797815544,
+    "duration" : 32330
+  },
+  "summary" : {
+    "attachments" : 1,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "86812a38f0f78870",
+    "name" : "olx searched listings itrator",
+    "title" : "olx searched listings itrator"
+  },
+  "steps" : [ ],
+  "attachments" : [ {
+    "title" : "Screenshot",
+    "source" : "ad55de01-acaf-4554-8a4d-1dac4fc50250-attachment.png",
+    "type" : "image/png",
+    "size" : 169396,
+    "uid" : "c474dd03dbd201c9"
+  } ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "suite-name",
+    "value" : "olx searched listings itrator"
+  }, {
+    "name" : "suite-title",
+    "value" : "olx searched listings itrator"
+  } ],
+  "parameters" : [ ]
+}
