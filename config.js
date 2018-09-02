@@ -1,6 +1,7 @@
-
 exports.config = {
-    seleniumAddress: 'http://localhost:4444/wd/hub',
+    //directConnect: true,
+    //seleniumAddress: 'http://localhost:4444/wd/hub',
+    seleniumServerJar: './node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-3.14.0.jar',
     specs: ['spec.js'],
     capabilities: {
         browserName: 'chrome'
@@ -21,9 +22,8 @@ exports.config = {
                 done();
             });
         });
-
-
-        var SpecReporter = require('./node_modules/jasmine-spec-reporter').SpecReporter;
+        
+        let SpecReporter = require('./node_modules/jasmine-spec-reporter').SpecReporter;
         jasmine.getEnv().addReporter(new SpecReporter({
             displayStacktrace: 'all',      
             displaySuccessesSummary: true, 
@@ -48,6 +48,7 @@ exports.config = {
         }));
     },
     jasmineNodeOpts: {
+        defaultTimeoutInterval: 30000,
         silent: true
     }
 

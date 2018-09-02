@@ -6,10 +6,16 @@
     "license": "ISC",
     "main": "config.js",
     "scripts": {
-        "test": "node ./node_modules/protractor/bin/protractor config.js"
+        "webdriver": "webdriver-manager update",
+        "protractor": "node ./node_modules/protractor/bin/protractor config.js",
+        "test": "npm-run-all -s webdriver protractor"
     },
     "devDependencies": {
-        "protractor": "5.3.2",
-        "jasmine-spec-reporter": "^2.4.0"
+        "jasmine-spec-reporter": "^3.3.0",
+        "protractor": "^5.3.2"
+    },
+    "dependencies": {
+        "jasmine-allure-reporter": "^1.0.2",
+        "npm-run-all": "^4.1.3"
     }
 }
