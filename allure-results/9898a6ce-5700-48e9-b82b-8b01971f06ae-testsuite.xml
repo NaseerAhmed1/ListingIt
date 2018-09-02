@@ -1,0 +1,37 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1535814434952' stop='1535814511036'>
+    <name>olx searched listings itrator</name>
+    <title>olx searched listings itrator</title>
+    <test-cases>
+        <test-case start='1535814434953' status='passed' stop='1535814446152'>
+            <name>olx is launched successfully</name>
+            <title>olx is launched successfully</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='596a6142-df1c-41f1-a4a5-b4a03347ae06-attachment.png' type='image/png' size='217233'/>
+            </attachments>
+        </test-case>
+        <test-case start='1535814446157' status='passed' stop='1535814473505'>
+            <name>Search is made successfully</name>
+            <title>Search is made successfully</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='e658611f-7cc4-445b-9f4e-2bf1cd6e4d83-attachment.png' type='image/png' size='164604'/>
+            </attachments>
+        </test-case>
+        <test-case start='1535814473505' status='passed' stop='1535814511035'>
+            <name>listings are iterated and searched word is verified</name>
+            <title>listings are iterated and searched word is verified</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='575e4d64-ef2c-43be-9157-83fb43dc8b41-attachment.png' type='image/png' size='298336'/>
+            </attachments>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

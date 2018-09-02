@@ -1,0 +1,59 @@
+{
+  "features" : [ {
+    "title" : "Without feature",
+    "statistic" : {
+      "total" : 3,
+      "passed" : 3,
+      "pending" : 0,
+      "canceled" : 0,
+      "failed" : 0,
+      "broken" : 0
+    },
+    "stories" : [ {
+      "uid" : "4dc696d00f0afbe3",
+      "title" : "Without story",
+      "statistic" : {
+        "total" : 3,
+        "passed" : 3,
+        "pending" : 0,
+        "canceled" : 0,
+        "failed" : 0,
+        "broken" : 0
+      },
+      "testCases" : [ {
+        "uid" : "b90aa23703f9743c",
+        "name" : "olx is launched successfully",
+        "title" : "olx is launched successfully",
+        "time" : {
+          "start" : 1535797769826,
+          "stop" : 1535797783213,
+          "duration" : 13387
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "d7103686fad9c643",
+        "name" : "Search is made successfully",
+        "title" : "Search is made successfully",
+        "time" : {
+          "start" : 1535797783214,
+          "stop" : 1535797815544,
+          "duration" : 32330
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "795bc0f05ca721de",
+        "name" : "listings are iterated and searched word is verified",
+        "title" : "listings are iterated and searched word is verified",
+        "time" : {
+          "start" : 1535797815546,
+          "stop" : 1535797844093,
+          "duration" : 28547
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      } ]
+    } ]
+  } ]
+}

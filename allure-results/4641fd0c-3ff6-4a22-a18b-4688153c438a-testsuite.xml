@@ -1,0 +1,119 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1535804732525' stop='1535804791761'>
+    <name>olx searched listings itrator</name>
+    <title>olx searched listings itrator</title>
+    <test-cases>
+        <test-case start='1535804732525' status='passed' stop='1535804752314'>
+            <name>olx is launched successfully</name>
+            <title>olx is launched successfully</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='bdecf445-1fe9-43ae-ac39-44c1b9717e66-attachment.png' type='image/png' size='268952'/>
+            </attachments>
+        </test-case>
+        <test-case start='1535804752316' status='passed' stop='1535804791323'>
+            <name>Search is made successfully</name>
+            <title>Search is made successfully</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='21daf8b8-433f-443b-934c-96699b04909e-attachment.png' type='image/png' size='165159'/>
+            </attachments>
+        </test-case>
+        <test-case start='1535804791323' status='failed' stop='1535804791759'>
+            <name>listings are iterated and searched word is verified</name>
+            <title>listings are iterated and searched word is verified</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='6dee9b8f-e4c8-43e6-ad89-f0b3858b5dfb-attachment.png' type='image/png' size='165159'/>
+            </attachments>
+            <failure>
+                <message>Failed: java.net.SocketException: Permission denied: connect</message>
+                <stack-trace>WebDriverError: java.net.SocketException: Permission denied: connect
+                    at Object.checkLegacyResponse (D:\Automated Testing\githubrepo\ListingIt\node_modules\selenium-webdriver\lib\error.js:546:15)
+                    at parseHttpResponse (D:\Automated Testing\githubrepo\ListingIt\node_modules\selenium-webdriver\lib\http.js:509:13)
+                    at doSend.then.response (D:\Automated Testing\githubrepo\ListingIt\node_modules\selenium-webdriver\lib\http.js:441:30)
+                    at &lt;anonymous>
+                    at process._tickCallback (internal/process/next_tick.js:188:7)
+                From: Task: WebElement.getText()
+                    at thenableWebDriverProxy.schedule (D:\Automated Testing\githubrepo\ListingIt\node_modules\selenium-webdriver\lib\webdriver.js:807:17)
+                    at WebElement.schedule_ (D:\Automated Testing\githubrepo\ListingIt\node_modules\selenium-webdriver\lib\webdriver.js:2010:25)
+                    at WebElement.getText (D:\Automated Testing\githubrepo\ListingIt\node_modules\selenium-webdriver\lib\webdriver.js:2277:17)
+                    at actionFn (D:\Automated Testing\githubrepo\ListingIt\node_modules\protractor\built\element.js:89:44)
+                    at Array.map (&lt;anonymous>)
+                    at actionResults.getWebElements.then (D:\Automated Testing\githubrepo\ListingIt\node_modules\protractor\built\element.js:461:65)
+                    at ManagedPromise.invokeCallback_ (D:\Automated Testing\githubrepo\ListingIt\node_modules\selenium-webdriver\lib\promise.js:1376:14)
+                    at TaskQueue.execute_ (D:\Automated Testing\githubrepo\ListingIt\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+                    at TaskQueue.executeNext_ (D:\Automated Testing\githubrepo\ListingIt\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+                    at asyncRun (D:\Automated Testing\githubrepo\ListingIt\node_modules\selenium-webdriver\lib\promise.js:2927:27)
+                    at D:\Automated Testing\githubrepo\ListingIt\node_modules\selenium-webdriver\lib\promise.js:668:7
+                    at &lt;anonymous>
+                    at process._tickCallback (internal/process/next_tick.js:188:7)Error
+                    at ElementArrayFinder.applyAction_ (D:\Automated Testing\githubrepo\ListingIt\node_modules\protractor\built\element.js:459:27)
+                    at ElementArrayFinder.(anonymous function).args [as getText] (D:\Automated Testing\githubrepo\ListingIt\node_modules\protractor\built\element.js:91:29)
+                    at ElementFinder.(anonymous function).args [as getText] (D:\Automated Testing\githubrepo\ListingIt\node_modules\protractor\built\element.js:831:22)
+                    at verifyAd (D:\Automated Testing\githubrepo\ListingIt\helpers.js:14:34)
+                    at D:\Automated Testing\githubrepo\ListingIt\helpers.js:10:21
+                    at ManagedPromise.invokeCallback_ (D:\Automated Testing\githubrepo\ListingIt\node_modules\selenium-webdriver\lib\promise.js:1376:14)
+                    at TaskQueue.execute_ (D:\Automated Testing\githubrepo\ListingIt\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+                    at TaskQueue.executeNext_ (D:\Automated Testing\githubrepo\ListingIt\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+                    at asyncRun (D:\Automated Testing\githubrepo\ListingIt\node_modules\selenium-webdriver\lib\promise.js:2927:27)
+                    at D:\Automated Testing\githubrepo\ListingIt\node_modules\selenium-webdriver\lib\promise.js:668:7
+                    at &lt;anonymous>
+                    at process._tickCallback (internal/process/next_tick.js:188:7)
+                From: Task: Run it("listings are iterated and searched word is verified") in control flow
+                    at UserContext.&lt;anonymous> (D:\Automated Testing\githubrepo\ListingIt\node_modules\jasminewd2\index.js:94:19)
+                    at attempt (D:\Automated Testing\githubrepo\ListingIt\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+                    at QueueRunner.run (D:\Automated Testing\githubrepo\ListingIt\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+                    at QueueRunner.execute (D:\Automated Testing\githubrepo\ListingIt\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4199:10)
+                    at Spec.queueRunnerFactory (D:\Automated Testing\githubrepo\ListingIt\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:909:35)
+                    at Spec.execute (D:\Automated Testing\githubrepo\ListingIt\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:526:10)
+                    at UserContext.fn (D:\Automated Testing\githubrepo\ListingIt\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:5340:37)
+                    at attempt (D:\Automated Testing\githubrepo\ListingIt\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+                    at QueueRunner.run (D:\Automated Testing\githubrepo\ListingIt\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+                    at runNext (D:\Automated Testing\githubrepo\ListingIt\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
+                    at D:\Automated Testing\githubrepo\ListingIt\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4264:13
+                    at D:\Automated Testing\githubrepo\ListingIt\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4172:9
+                    at QueueRunner.complete [as onComplete] (D:\Automated Testing\githubrepo\ListingIt\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:533:9)
+                    at Immediate._onImmediate (D:\Automated Testing\githubrepo\ListingIt\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4231:12)
+                    at runCallback (timers.js:810:20)
+                    at tryOnImmediate (timers.js:768:5)
+                    at processImmediate [as _immediateCallback] (timers.js:745:5)
+                From asynchronous test: 
+                Error
+                    at Suite.&lt;anonymous> (D:\Automated Testing\githubrepo\ListingIt\spec.js:31:5)
+                    at addSpecsToSuite (D:\Automated Testing\githubrepo\ListingIt\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
+                    at Env.describe (D:\Automated Testing\githubrepo\ListingIt\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
+                    at describe (D:\Automated Testing\githubrepo\ListingIt\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
+                    at Object.&lt;anonymous> (D:\Automated Testing\githubrepo\ListingIt\spec.js:3:1)
+                    at Module._compile (module.js:652:30)
+                    at Object.Module._extensions..js (module.js:663:10)
+                    at Module.load (C:\Users\naseer.ahmed\node_modules\coffee-script\lib\coffee-script\register.js:45:36)
+                    at tryModuleLoad (module.js:505:12)
+                    at Function.Module._load (module.js:497:3)
+                    at Module.require (module.js:596:17)
+                    at require (internal/module.js:11:18)
+                    at D:\Automated Testing\githubrepo\ListingIt\node_modules\jasmine\lib\jasmine.js:93:5
+                    at Array.forEach (&lt;anonymous>)
+                    at Jasmine.loadSpecs (D:\Automated Testing\githubrepo\ListingIt\node_modules\jasmine\lib\jasmine.js:92:18)
+                    at Jasmine.execute (D:\Automated Testing\githubrepo\ListingIt\node_modules\jasmine\lib\jasmine.js:197:8)
+                    at D:\Automated Testing\githubrepo\ListingIt\node_modules\protractor\built\frameworks\jasmine.js:132:15
+                    at Function.promise (D:\Automated Testing\githubrepo\ListingIt\node_modules\q\q.js:682:9)
+                    at D:\Automated Testing\githubrepo\ListingIt\node_modules\protractor\built\frameworks\jasmine.js:104:14
+                    at _fulfilled (D:\Automated Testing\githubrepo\ListingIt\node_modules\q\q.js:834:54)
+                    at self.promiseDispatch.done (D:\Automated Testing\githubrepo\ListingIt\node_modules\q\q.js:863:30)
+                    at Promise.promise.promiseDispatch (D:\Automated Testing\githubrepo\ListingIt\node_modules\q\q.js:796:13)
+                    at D:\Automated Testing\githubrepo\ListingIt\node_modules\q\q.js:556:49
+                    at runSingle (D:\Automated Testing\githubrepo\ListingIt\node_modules\q\q.js:137:13)
+                    at flush (D:\Automated Testing\githubrepo\ListingIt\node_modules\q\q.js:125:13)
+                    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+                    at process._tickCallback (internal/process/next_tick.js:180:9)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
