@@ -1,0 +1,47 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1544779841452' stop='1544779907622'>
+    <name>olx searched listings itrator</name>
+    <title>olx searched listings itrator</title>
+    <test-cases>
+        <test-case start='1544779841453' status='passed' stop='1544779843570'>
+            <name>Smoke Testing : olx Smoke is performed</name>
+            <title>Smoke Testing : olx Smoke is performed</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='1ba90cfa-19ec-4f70-baed-07efc3c8b0f4-attachment.png' type='image/png' size='4868'/>
+            </attachments>
+        </test-case>
+        <test-case start='1544779843593' status='passed' stop='1544779844302'>
+            <name>Verify Search Results : listings are iterated and searched word is verified</name>
+            <title>Verify Search Results : listings are iterated and searched word is verified</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='6812425c-a321-4f04-9e3c-a33081b0034e-attachment.png' type='image/png' size='4868'/>
+            </attachments>
+        </test-case>
+        <test-case start='1544779844303' status='passed' stop='1544779844846'>
+            <name>Verify Filters : Filters on search page are verified</name>
+            <title>Verify Filters : Filters on search page are verified</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='6400b6da-f32d-4d8f-baf0-adf6c3ca95cb-attachment.png' type='image/png' size='4868'/>
+            </attachments>
+        </test-case>
+        <test-case start='1544779844847' status='passed' stop='1544779907618'>
+            <name>Verify Listings : Detail view of the ad is verified</name>
+            <title>Verify Listings : Detail view of the ad is verified</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='d2fc9e43-acf5-4b91-aa4c-5bd6cd8c42c5-attachment.png' type='image/png' size='118043'/>
+            </attachments>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

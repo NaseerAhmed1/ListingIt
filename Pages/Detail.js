@@ -1,5 +1,5 @@
 var detailPage = function(){
-    //Locators here
+    //Locators here : A
     var imageGallery = element(by.css('#container>main>div>div>div.rui-2SwH7.rui-m4D6f.rui-yyNoO.rui-3CPXI.rui-3E1c2.rui-1JF_2>div>div'));
 
     var adDetails = element(by.css('#container main>div>div>div.rui-2SwH7.rui-m4D6f.rui-yyNoO.rui-3CPXI.rui-3E1c2.rui-1JF_2>div >div'));
