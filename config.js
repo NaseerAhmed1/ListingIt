@@ -9,6 +9,7 @@ exports.config = {
 
     onPrepare: function() {
         var AllureReporter = require('./node_modules/jasmine-allure-reporter');
+        browser.manage().window().setSize(1600, 1000);
         jasmine.getEnv().addReporter(new AllureReporter({
             allureReport: {
                 resultsDir: 'allure-results'
