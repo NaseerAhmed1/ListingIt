@@ -15,6 +15,7 @@
         "protractor": "^5.3.2"
     },
     "dependencies": {
+        "allure-commandline": "^2.7.0",
         "jasmine-allure-reporter": "^1.0.2",
         "npm-run-all": "^4.1.3"
     }
