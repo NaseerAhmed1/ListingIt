@@ -17,7 +17,8 @@ describe('olx searched listings itrator', function() {
 
     // launching site and verify that its search component is loaded.
     it('Smoke Testing : olx Smoke is performed', function() {
-        /* //Go to home page
+        
+        //Go to home page
         home.loadPage();
         browser.sleep(3000);
         //Verify important elements of Home page.
@@ -46,14 +47,15 @@ describe('olx searched listings itrator', function() {
         browser.sleep(5000);
         //Verify important elements of Search page.
         expect(detail.getimageGallery().isPresent()).toBe(true);
-        expect(detail.getadDetails().isPresent()).toBe(true);
+        expect(detail.getadDetailsImg().isPresent()).toBe(true);
         expect(detail.getadLocation().isPresent()).toBe(true); 
-        browser.sleep(5000); */
-
+        browser.sleep(5000); 
+        
     });
     it('Verify Search Results : listings are iterated and searched word is verified', function() {
+        /*
         //Iterate ads of first and 2nd page
-        /*home.loadPage();
+        home.loadPage();
         browser.sleep(3000);
         home.clickCity();
         browser.sleep(3000);
@@ -74,9 +76,11 @@ describe('olx searched listings itrator', function() {
         browser.sleep(3000);
         //Verify Next 20 ads
         search.verifyPageAds(); 
-        browser.sleep(3000); */
+        browser.sleep(3000); 
+        */
     }); 
     it('Verify Filters : Filters on search page are verified', function() {
+        /*
         //Go to search page
         home.loadPage();
         browser.sleep(3000);
@@ -92,7 +96,7 @@ describe('olx searched listings itrator', function() {
         browser.sleep(3000);
         search.clickCity();
         browser.sleep(3000);
-        search.setCity('Lahore');
+        search.setCity("Lahore");
         browser.sleep(3000);
         search.clicksearchButton();
         browser.sleep(3000);
@@ -110,7 +114,7 @@ describe('olx searched listings itrator', function() {
         search.clicksearchButton();
         browser.sleep(3000);
         //Verify kids furniture
-        var args2 = ['kid','bed','furniture'];
+        var args2 = ["kid","bed","furniture"];
         search.verifyPageAds(args2);
         //search.verifyPageAds.apply(args2);
         //search.getbreadcrumb();
@@ -130,10 +134,12 @@ describe('olx searched listings itrator', function() {
         browser.sleep(3000);
         search.verifyAdsPriceRange(2000,3000);
         browser.sleep(3000); 
+        */
     });
     // made search for any product
     it('Verify Listings : Detail view of the ad is verified', function() {
-        /* home.loadPage();
+        /*
+        home.loadPage();
         browser.sleep(3000);
         home.clickCity();
         browser.sleep(3000);
@@ -169,7 +175,8 @@ describe('olx searched listings itrator', function() {
             expect(listAdText).toContain(detailAdText);
         });
 
-        browser.sleep(15000); */
+        browser.sleep(15000); 
+        */
     });
 
    it('Verify Sign Up : User Registration completed', function() {
@@ -247,7 +254,8 @@ describe('olx searched listings itrator', function() {
 
     }); 
      it('User logged In - verfied', function () {
-        /* home.loadPage();
+        /*
+        home.loadPage();
         browser.sleep(3000);
         //Verify important elements of Home page.
         expect(home.getSearchButton().isPresent()).toBe(true);
@@ -278,8 +286,8 @@ describe('olx searched listings itrator', function() {
          browser.sleep(3000);
         expect(home.getnotification().isPresent()).toBe(true);
         
-        browser.sleep(20000); */
-       
+        browser.sleep(20000); 
+       */
     });
     it('Testing here', function () {
         /*
