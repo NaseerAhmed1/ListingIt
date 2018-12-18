@@ -139,7 +139,7 @@ var searchPage = function(){
                     else
                     {
                         //return value;
-                        for(k=0; k<searchW.length;k++){
+                        for(var k=0; k<searchW.length;k++){
                             // console.log('our word'+searchW[k]);
 
                             if(value.indexOf(searchW[k]) !== -1){
