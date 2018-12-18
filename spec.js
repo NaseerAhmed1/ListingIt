@@ -17,7 +17,7 @@ describe('olx searched listings itrator', function() {
 
     // launching site and verify that its search component is loaded.
     it('Smoke Testing : olx Smoke is performed', function() {
-        
+        /*
         //Go to home page
         home.loadPage();
         browser.sleep(3000);
@@ -50,10 +50,10 @@ describe('olx searched listings itrator', function() {
         expect(detail.getadDetailsImg().isPresent()).toBe(true);
         expect(detail.getadLocation().isPresent()).toBe(true); 
         browser.sleep(5000); 
-        
+        */
     });
     it('Verify Search Results : listings are iterated and searched word is verified', function() {
-        /*
+        
         //Iterate ads of first and 2nd page
         home.loadPage();
         browser.sleep(3000);
@@ -70,14 +70,15 @@ describe('olx searched listings itrator', function() {
         home.clickSearch();
         browser.sleep(5000);
         //Verify first 20 ads
-        search.verifyPageAds('nokia');
+        var arr1=['nokia'];
+        search.verifyPageAds(arr1);
         browser.sleep(3000);
         search.clickSeeMore();
         browser.sleep(3000);
         //Verify Next 20 ads
-        search.verifyPageAds(); 
+        search.verifyPageAds(arr1); 
         browser.sleep(3000); 
-        */
+        
     }); 
     it('Verify Filters : Filters on search page are verified', function() {
         /*
