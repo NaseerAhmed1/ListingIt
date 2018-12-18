@@ -115,6 +115,7 @@ describe('olx searched listings itrator', function() {
         //search.verifyPageAds.apply(args2);
         //search.getbreadcrumb();
         //expect(search.getbreadcrumb().getText()).toContain('Kids Furniture');
+        //verify Price filters
         browser.sleep(3000);
         search.clickMinPrice();
         browser.sleep(3000);
@@ -126,7 +127,9 @@ describe('olx searched listings itrator', function() {
         search.clickpriceSearch();
         browser.sleep(3000);
         expect(search.getpriceFilter().getText()).toContain('Between 2000 and 3000');
-        browser.sleep(15000); 
+        browser.sleep(3000);
+        search.verifyAdsPriceRange(2000,3000);
+        browser.sleep(3000); 
     });
     // made search for any product
     it('Verify Listings : Detail view of the ad is verified', function() {
@@ -281,7 +284,7 @@ describe('olx searched listings itrator', function() {
     it('Testing here', function () {
         /*
         //browser.get('https://accounts.google.com/ServiceLogin/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=AddSession');
-        //browser.sleep(3000);
+        browser.sleep(3000); */
         /* element(by.css("#identifierId")).sendKeys("sqcprocess@gmail.com");
         browser.sleep(3000);
         element(by.css("#password>div.aCsJod.oJeWuf>div>div.Xb9hP>input")).sendKeys("sqcprocess123");
