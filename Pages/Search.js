@@ -14,9 +14,13 @@ var searchPage = function(){
     var cat = element(by.xpath('//*[@id="container"]/header/div/div[2]/div/div[2]/ul/li/div/div[15]/div[1]/div[2]'));
     var catSub = element(by.xpath('//*[@id="container"]/header/div/div[2]/div/div[2]/ul/li/div/div[15]/div[2]/div/div[1]/a/span'));
     var searchButton = element(by.css('#container>header>div>div._2pd-7>div>div._3b3oR>span'));
+    var minPrice=element(by.css('div._3bdzO > div > input.range-input-min'));
+    var maxPrice=element(by.css('div._3bdzO > div > input.range-input-max'));
+    var priceSearch = element(by.css('div._3bdzO > div > a'));
+    var priceFilter = element(by.css('div._3t6Ih > div > div:nth-child(1) > ul > li > a > div > span > label'));
 
 
-    //Methots here
+    /////////////////////////////////////////////////////Methots here///////////////////////////////////////////////////
     this.getcategories=function(){
         return categories;
     };
@@ -49,7 +53,7 @@ var searchPage = function(){
     this.getbreadcrumb = function(){
         return breadcrumb;
     };
-
+    /*
     this.getTotalAds =function(){
         aAdsFound.getText().then(function(a){
             var total = a.toString().split(' ')[0];
@@ -92,7 +96,8 @@ var searchPage = function(){
             });
 
         });
-    };
+    }; 
+     */
 
     //Function for iterating each card and will verify search text in card.
     this.verifyPageAds= function (searchW) {
@@ -147,15 +152,6 @@ var searchPage = function(){
                             }
                         }
 
-
-                        //var containsSome = searchW;
-                        //expect(value).to.satisfy(containsSome);
-                        //expect(value).toEqual(jasmine.arrayContaining(["lahore", "kid", "bed","furniture"]));
-
-                        //expect(value).toContain(jasmine.arrayContaining([a, b, c]));
-                        // expect(value).toContain(a || b || c);
-                        //console.log(i+'-- $$$  contains searched word  $$$');  
-
                     }
 
                 });
@@ -164,26 +160,45 @@ var searchPage = function(){
         });
     };
 
-    this.clickSeeMore=function(){
-        seeMore.click();
-    };
     this.clickSpecificAd=function(a){
         searchedAds.then(function(items){
             items[a].click();
         });
     };
+    this.clickSeeMore=function(){
+        seeMore.click();
+    };
+    this.clickMinPrice= function(){
+        minPrice.click();
+    };
+    this.setMinPrice= function(a){
+        minPrice.sendKeys(a);
+    };
+    this.clickMaxPrice= function(){
+        maxPrice.click();
+    };
+    this.setMaxPrice= function(a){
+        maxPrice.sendKeys(a);
+    };
+    this.clickpriceSearch=function(){
+        priceSearch.click();
+    };
+    this.getpriceFilter=function(){
+        return priceFilter;
+    };
+
     this.getSpecificAdText= function(a){
         var valuA = searchedAds.then(function(items){
             var valuB = items[a].getText().then(function(textValue){
 
                 var value=textValue.toString().toLowerCase();
-                console.log('value : '+value);
+                //console.log('value : '+value);
                 return value;
             });
 
             return valuB;
         });
-        
+
         return valuA;
     };
 
