@@ -5,6 +5,7 @@ var searchPage = function(){
     var categories=element(by.css('#container>main>div>section>div>div>div:nth-child(7)>div._3t6Ih>div>div._3icuH._1ofyz> div.ij2tb>span>span'));
 
     var searchedAds = element.all(by.css('#container>main>div>section>div>div>div:nth-child(7)>div._1g25P>div>div:nth-child(2)>ul>li'));
+    var searchedAdsPrice = element.all(by.css('span[data-aut-id=itemPrice]'));
     var aAdsFound = element(by.className('_2EwP3'));
     var seeMore = element(by.css('#container>main>div>section>div>div>div:nth-child(7)>div._1g25P>div>div.JbJAl>button'));
 
@@ -100,7 +101,7 @@ var searchPage = function(){
      */
 
     //Function for iterating each card and will verify search text in card.
-    this.verifyPageAds= function (searchW) {
+    this.verifyPageAds= function(searchW) {
 
         searchedAds.then(function(items){
 
@@ -160,6 +161,61 @@ var searchPage = function(){
         });
     };
 
+    /////////////////////////////////////////////////////////////////
+    
+    this.verifyAdsPriceRange= function(min,max) {
+
+        searchedAdsPrice.then(function(items){
+
+            if (items.length<=21)
+            {
+
+                console.log('****************************** First 20 Ads **********************************');
+                for( var i=1; i<items.length; i++)
+                {
+
+                    verifyPriceAd(i);
+
+                }
+            } 
+            else {
+                console.log('****************************** Next 20 Ads **********************************');
+                var iterations=Math.abs(items.length-20);
+                for( var i=iterations; i<items.length; i++)
+                {
+
+                    verifyPriceAd(i);
+
+                }
+
+            }
+
+            function verifyPriceAd(i) {
+                items[i].getText().then(function(textValue){
+                                    
+                    var value=textValue.toString().toLowerCase();
+                    var subst=textValue.substr(3,8);
+                    var adPrice = parseInt(subst.replace(/,/g, ''));
+                    if (i===6)
+                    {
+                        console.log(i+'----------- Ad area ------------');  
+                    }
+                    else
+                    {
+                        
+                        expect(adPrice).toBeGreaterThan(1999);
+                        expect(adPrice).toBeLessThan(3001);
+                        console.log(i+'Ad Price are within the range');  
+                       
+                    }
+
+                });
+            }; 
+
+        });
+    };
+    
+    ////////////////////////////////////////////////////////////////
     this.clickSpecificAd=function(a){
         searchedAds.then(function(items){
             items[a].click();
