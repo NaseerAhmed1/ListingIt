@@ -7,7 +7,7 @@ var mailPage = require('./pages/Mail.js');
 describe('olx searched listings itrator', function() {
     browser.ignoreSynchronization = true;
     jasmine.DEFAULT_TIMEOUT_INTERVAL=100000;
-    
+
     // Objects of each Page is created.
     var home= new homePage();
     var search= new searchPage();
@@ -17,7 +17,7 @@ describe('olx searched listings itrator', function() {
 
     // launching site and verify that its search component is loaded.
     it('Smoke Testing : olx Smoke is performed', function() {
-        /*
+        
         //Go to home page
         home.loadPage();
         browser.sleep(3000);
@@ -50,7 +50,7 @@ describe('olx searched listings itrator', function() {
         expect(detail.getadDetailsImg().isPresent()).toBe(true);
         expect(detail.getadLocation().isPresent()).toBe(true); 
         browser.sleep(5000); 
-        */
+        
     });
     it('Verify Search Results : listings are iterated and searched word is verified', function() {
         
@@ -81,7 +81,7 @@ describe('olx searched listings itrator', function() {
         
     }); 
     it('Verify Filters : Filters on search page are verified', function() {
-        /*
+        
         //Go to search page
         home.loadPage();
         browser.sleep(3000);
@@ -135,11 +135,11 @@ describe('olx searched listings itrator', function() {
         browser.sleep(3000);
         search.verifyAdsPriceRange(2000,3000);
         browser.sleep(3000); 
-        */
+        
     });
     // made search for any product
     it('Verify Listings : Detail view of the ad is verified', function() {
-        /*
+        
         home.loadPage();
         browser.sleep(3000);
         home.clickCity();
@@ -177,11 +177,11 @@ describe('olx searched listings itrator', function() {
         });
 
         browser.sleep(15000); 
-        */
+        
     });
 
-   it('Verify Sign Up : User Registration completed', function() {
-         /* //Go to home page
+    it('Verify Sign Up : User Registration completed', function() {
+        /* //Go to home page
         home.loadPage();
         browser.sleep(3000);
         //Verify important elements of Home page.
@@ -254,8 +254,8 @@ describe('olx searched listings itrator', function() {
         browser.sleep(5000); */
 
     }); 
-     it('User logged In - verfied', function () {
-        /*
+    it('User logged In - verfied', function () {
+        
         home.loadPage();
         browser.sleep(3000);
         //Verify important elements of Home page.
@@ -284,24 +284,16 @@ describe('olx searched listings itrator', function() {
         home.setpassH();
         browser.sleep(3000);
         home.clickloginButton();
-         browser.sleep(3000);
+        browser.sleep(3000);
         expect(home.getnotification().isPresent()).toBe(true);
-        
+
         browser.sleep(20000); 
-       */
+        
     });
     it('Testing here', function () {
+
         /*
-        //browser.get('https://accounts.google.com/ServiceLogin/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=AddSession');
-        browser.sleep(3000); */
-        /* element(by.css("#identifierId")).sendKeys("sqcprocess@gmail.com");
-        browser.sleep(3000);
-        element(by.css("#password>div.aCsJod.oJeWuf>div>div.Xb9hP>input")).sendKeys("sqcprocess123");
-        browser.sleep(3000);
-        element(by.css("#passwordNext>content>span")).click();
-        browser.sleep(3000); */
-        ///////////////////////////////////////////////////////////
-       /* mail.loadEmailPage();
+        mail.loadEmailPage();
         browser.sleep(3000);
         expect(mail.getcontGmail().isPresent()).toBe(true);
         browser.sleep(3000);
@@ -318,27 +310,17 @@ describe('olx searched listings itrator', function() {
         mail.setenterPass();
         browser.sleep(3000);
         mail.clickpassNexts();
-        browser.sleep(3000);
-        var tbae = element(by.css('#\3a 34'));
-        mail.sub_ele_index(tbae,'tr',0);
-        //j.click();
-        browser.sleep(20000); */
-        
-       /* browser.controlFlow().wait(mail.getLastEmail()).then(function(email) {
-            console.log('in it after last email 1');
-            expect(email.subject).toEqual("Your verification code is");
-            
-            //expect(email.headers.to).toEqual("myemail@email.com");
-            console.log('in it after last email 2');
+        browser.sleep(3000); 
+        mail.OpenInbox();
+        browser.sleep(5000);
+        mail.ReadCode();
 
-            // extract registration code from the email message
-            var pattern = /Your confirmation code is: (\w+)/g;
-            var regCode = pattern.exec(email.text)[1]
 
-            console.log(regCode);
+       
 
-        }); */
-        
+        browser.sleep(20000); 
+        */
     });
 
 });
+

@@ -54,52 +54,7 @@ var searchPage = function(){
     this.getbreadcrumb = function(){
         return breadcrumb;
     };
-    /*
-    this.getTotalAds =function(){
-        aAdsFound.getText().then(function(a){
-            var total = a.toString().split(' ')[0];
-            console.log("ads :" + total);
-            var pages=Math.round(total/20);
-            console.log(pages);
-            for(var j=39; j<=pages; j++)
-            {
-                var nexPageUrl=urlCurrent+'/?page='+j;
-                browser.get(nexPageUrl);
-                iteratePages(j);
-            }
-            function iteratePages(j)
-            {
-                common.verifyPageAds(j);
-            }
-        });
-    };
-
-    this.verifySearchedAds=function(){
-        this.verifyPageAds();
-        element(by.css(totalAds)).getText().then(function(totalad){
-            browser.driver.getCurrentUrl().then(function(url) {
-                var urlCurrent=url.toString();
-                var total=parseInt(totalad.replace(/,/g, ''));
-                console.log(total);
-                var pages=Math.round(total/44);
-                console.log(pages);
-                for(var j=39; j<=pages; j++)
-                {
-                    var nexPageUrl=urlCurrent+'/?page='+j;
-                    browser.get(nexPageUrl);
-                    iteratePages(j);
-                }
-                function iteratePages(j)
-                {
-                    common.verifyPageAds(j);
-                }
-
-            });
-
-        });
-    }; 
-     */
-
+    
     //Function for iterating each card and will verify search text in card.
     this.verifyPageAds= function(searchW) {
 

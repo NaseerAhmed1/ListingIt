@@ -6,6 +6,8 @@ exports.config = {
     capabilities: {
         browserName: 'chrome'
     },
+    allScriptsTimeout: 30000,
+    getPageTimeout: 30000,
 
     onPrepare: function() {
         var AllureReporter = require('./node_modules/jasmine-allure-reporter');
@@ -49,42 +51,13 @@ exports.config = {
             customProcessors: []
         }));
 
-
-    /*    var MailListener = require("./node_modules/mail-listener2");
-
-        var mailListener = new MailListener({
-            username: "sqcprocess@gmail.com",
-            password: "sqcprocess123",
-            host: "imap.gmail.com",
-            port: 993, // imap port 
-            tls: true,
-            tlsOptions: { rejectUnauthorized: false },
-            mailbox: "INBOX", // mailbox to monitor 
-            searchFilter: ["UNSEEN", "FLAGGED"], // the search filter being used after an IDLE notification has been retrieved 
-            markSeen: true, // all fetched email willbe marked as seen and not fetched next time 
-            fetchUnreadOnStart: true, // use it only if you want to get all unread email on lib start. Default is `false`, 
-            mailParserOptions: {streamAttachments: true}, // options to be passed to mailParser lib. 
-            attachments: true, // download attachments as they are encountered to the project directory 
-            attachmentOptions: { directory: "attachments/" } // specify a download directory for attachments 
-        });
-
-        mailListener.start();
-
-        mailListener.on("server:connected", function(){
-            console.log("Mail listener initialized");
-        });
-
-        global.mailListener = mailListener;
-        
-        */
+      
     },
-    /*
-    onCleanUp: function () {
-        mailListener.stop();
-    }, */
-    
+
+
     jasmineNodeOpts: {
-        defaultTimeoutInterval: 30000,
+
+        defaultTimeoutInterval: 9999999,
         silent: true
     }
 

@@ -1,5 +1,5 @@
 var RegPage = function(){
-    //Locators here : A
+    //Locators here 
     var login = element(by.css('#container>header>div>div._14lZ9._110yh>span>span'));
     var emailButton = element(by.css('body>div:nth-child(28)>div>div>div>button:nth-child(5)>span'));
     var emailFormLoad = element(by.css('body>div:nth-child(28)>div>div>form>div>h3>span'));
@@ -14,7 +14,7 @@ var RegPage = function(){
      
     //var adLocation = element(by.className('_176bN'));
 
-    //Methods here
+    ///////////////////////////////////////Methods here////////////////////////////////////////////////////
     this.clickLogin = function(){
         login.click();
     };
