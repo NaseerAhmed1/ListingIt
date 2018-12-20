@@ -17,7 +17,7 @@ describe('olx searched listings itrator', function() {
 
     // launching site and verify that its search component is loaded.
     it('Smoke Testing : olx Smoke is performed', function() {
-        
+        /*
         //Go to home page
         home.loadPage();
         browser.sleep(3000);
@@ -50,10 +50,10 @@ describe('olx searched listings itrator', function() {
         expect(detail.getadDetailsImg().isPresent()).toBe(true);
         expect(detail.getadLocation().isPresent()).toBe(true); 
         browser.sleep(5000); 
-        
+        */
     });
     it('Verify Search Results : listings are iterated and searched word is verified', function() {
-        
+        /*
         //Iterate ads of first and 2nd page
         home.loadPage();
         browser.sleep(3000);
@@ -78,10 +78,10 @@ describe('olx searched listings itrator', function() {
         //Verify Next 20 ads
         search.verifyPageAds(arr1); 
         browser.sleep(3000); 
-        
+        */
     }); 
     it('Verify Filters : Filters on search page are verified', function() {
-        
+        /*
         //Go to search page
         home.loadPage();
         browser.sleep(3000);
@@ -135,11 +135,11 @@ describe('olx searched listings itrator', function() {
         browser.sleep(3000);
         search.verifyAdsPriceRange(2000,3000);
         browser.sleep(3000); 
-        
+        */
     });
     // made search for any product
     it('Verify Listings : Detail view of the ad is verified', function() {
-        
+        /*
         home.loadPage();
         browser.sleep(3000);
         home.clickCity();
@@ -177,85 +177,11 @@ describe('olx searched listings itrator', function() {
         });
 
         browser.sleep(15000); 
-        
+        */
     });
 
-    it('Verify Sign Up : User Registration completed', function() {
-        /* //Go to home page
-        home.loadPage();
-        browser.sleep(3000);
-        //Verify important elements of Home page.
-        expect(home.getSearchButton().isPresent()).toBe(true);
-        browser.sleep(3000);
-        //click Login  getemailFormLoad
-        reg.clickLogin();
-        browser.sleep(3000);
-        expect(reg.getemailFormLoad().isPresent()).toBe(true);
-
-        browser.sleep(3000);
-        reg.clickemailButton();
-        browser.sleep(3000);
-        reg.clickenterEmail();
-        browser.sleep(3000);
-        reg.setemail();
-        browser.sleep(3000);
-        expect(reg.getpassFormLoad().isPresent()).toBe(true);
-        browser.sleep(3000);
-        reg.clickenterPass();
-        browser.sleep(3000);
-        reg.setpass();
-        browser.sleep(3000);
-        reg.clickenterPassConfirm()
-        browser.sleep(3000);
-        reg.setenterPassConfirm();
-        browser.sleep(3000);
-        reg.clickcreatAccount();
-        browser.sleep(3000);
-        expect(reg.getconfirmationForm().isPresent()).toBe(true);
-        browser.sleep(3000); 
-
-
-        //Go to mail box
-        mail.loadEmailPage();
-        browser.sleep(3000);
-        expect(mail.getcontGmail().isPresent()).toBe(true);
-        browser.sleep(3000);
-        mail.clickenterEmail();
-        browser.sleep(3000);
-        mail.setenterEmail();
-        browser.sleep(3000);
-        mail.clicknext();
-        browser.sleep(3000);
-        expect(mail.passForam().isPresent()).toBe(true);
-        browser.sleep(3000);
-        mail.clickenterPass()
-        browser.sleep(3000);
-        mail.setenterPass();
-        browser.sleep(3000);
-        mail.clickpassNexts();
-        browser.sleep(3000);
-        //mail.getopenEmail();
-        // browser.sleep(3000);
-        //mail.testfun();
-
-
-
-        //mail.getLastEmail();
-        browser.sleep(3000);
-
-        browser.sleep(3000);
-
-        browser.sleep(3000);
-
-        browser.sleep(3000);
-
-        browser.sleep(3000);
-
-        browser.sleep(5000); */
-
-    }); 
     it('User logged In - verfied', function () {
-        
+        /*
         home.loadPage();
         browser.sleep(3000);
         //Verify important elements of Home page.
@@ -288,38 +214,110 @@ describe('olx searched listings itrator', function() {
         expect(home.getnotification().isPresent()).toBe(true);
 
         browser.sleep(20000); 
-        
+        */
     });
-    it('Testing here', function () {
+    it('Verify Sign Up : User Registration completed', function () {
+        var uName= 'sqcprocess7@gmail.com';
+        var password = 'sqcprocess123';
+        //Go to home page
+        home.loadPage();
+        browser.sleep(3000);
+        //Verify important elements of Home page.
+        expect(home.getSearchButton().isPresent()).toBe(true);
+        browser.sleep(3000);
+        //click Login  getemailFormLoad
+        reg.clickLogin();
+        browser.sleep(3000);
+        expect(reg.loadloginForm().isPresent()).toBe(true);
 
-        /*
+        browser.sleep(3000);
+        reg.clickemailButton();
+        browser.sleep(3000);
+        reg.clickenterEmail();
+        browser.sleep(3000);
+        reg.setemail(uName);
+        browser.sleep(3000);
+        reg.clicknextButton();
+        browser.sleep(3000);
+
+        expect(reg.getpassFormLoad().isPresent()).toBe(true);
+        browser.sleep(3000);
+        reg.clickenterPass();
+        browser.sleep(3000);
+
+        reg.setpass(password);
+        browser.sleep(3000);
+        //if user is attempting for the 2nd time
+        home.clickloginButton(); 
+        
+        // if user is attempting for the first time.
+        reg.clickenterPassConfirm()
+        browser.sleep(3000);
+        reg.setPassConfirm(password);
+        browser.sleep(3000);
+        reg.clickcreateAccount();
+        browser.sleep(3000);
+        expect(reg.getconfirmationForm().isPresent()).toBe(true);
+
+        //Add wait for email to be recieved in your inbox.
+        browser.sleep(60000);
+
+        /////////////////////////////////////////////////////////
+        var securityCode;
         mail.loadEmailPage();
         browser.sleep(3000);
-        expect(mail.getcontGmail().isPresent()).toBe(true);
-        browser.sleep(3000);
-        mail.clickenterEmail();
-        browser.sleep(3000);
-        mail.setenterEmail();
-        browser.sleep(3000);
-        mail.clicknext();
-        browser.sleep(3000);
-        expect(mail.passForam().isPresent()).toBe(true);
-        browser.sleep(3000);
-        mail.clickenterPass()
-        browser.sleep(3000);
-        mail.setenterPass();
-        browser.sleep(3000);
-        mail.clickpassNexts();
-        browser.sleep(3000); 
-        mail.OpenInbox();
-        browser.sleep(5000);
-        mail.ReadCode();
+        browser.getAllWindowHandles().then(function (handles) {
+            var secondWindowHandle = handles[1];
+            var firstWindowHandle = handles[0];
+            browser.switchTo().window(secondWindowHandle).then(function () {
+                browser.sleep(3000);
+                //expect(browser.driver.getCurrentUrl()).toContain("url");
+                //do some actions
 
+                expect(mail.getcontGmail().isPresent()).toBe(true);
+                browser.sleep(3000);
+                mail.clickenterEmail();
+                browser.sleep(3000);
+                mail.setenterEmail(uName);
+                browser.sleep(3000);
+                mail.clicknext();
+                browser.sleep(3000);
+                expect(mail.passForam().isPresent()).toBe(true);
+                browser.sleep(3000);
+                mail.clickenterPass()
+                browser.sleep(3000);
+                mail.setenterPass(password);
+                browser.sleep(3000);
+                mail.clickpassNexts();
+                browser.sleep(3000); 
+                mail.OpenInbox();
+                browser.sleep(5000);
+                //mail.ReadCode(); 
 
-       
+                var verificationC=mail.ReadCode();
+                verificationC.then(function(codeVal){
+                    securityCode=codeVal;
+                    console.log('Verification code is :'+securityCode);
+                }).then(function(){
+                    console.log('Verification code After function :'+securityCode);
+                });
+                browser.driver.close();
+            });
+            //---------------------------------------
+            browser.switchTo().window(firstWindowHandle).then(function () {
+                browser.sleep(3000);
+                reg.setconfirmCode(securityCode);          
+                browser.sleep(3000);
+                reg.clickregLogin();
+                browser.sleep(3000);
+                expect(home.getnotification().isPresent()).toBe(true);
+            });
 
-        browser.sleep(20000); 
-        */
+            //--------------------------------------------    
+        });
+
+        browser.sleep(200000); 
+
     });
 
 });

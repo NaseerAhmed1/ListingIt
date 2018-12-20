@@ -14,7 +14,7 @@ var homePage = function() {
     var nextButtonH = element(by.css('div > div > form > div > button'));
     var passFormLoadH = element(by.css('div > div > form > div > h3 > span'));
     var enterPassH = element(by.css('#password'));
-    var loginButton = element(by.css('div > div > form > div > button'));
+    var loginButton = element(by.css('div > div > form > div > button > span'));
     var notification = element(by.css('#container > header > div > div._14lZ9._110yh > div._2sx1i > div > span'));
 
 /////////////////////////////////////////////////////Methots here///////////////////////////////////////////////////

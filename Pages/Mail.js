@@ -12,7 +12,9 @@ var MailPage = function(){
 
     //////////////////////////////Methods here////////////////////////////////////////////////////////////////////////////
     this.loadEmailPage = function (){
-        browser.get('https://accounts.google.com/ServiceLogin/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=AddSession');
+        let url='https://accounts.google.com/ServiceLogin/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=AddSession';
+
+        return browser.executeScript("return window.open(arguments[0], '_blank')", url);
     };
     this.clickenterEmail = function(){
         enterEmail.click();
@@ -20,8 +22,8 @@ var MailPage = function(){
     this.getcontGmail= function(){
         return contGmail;
     };
-    this.setenterEmail= function(){
-        enterEmail.sendKeys('sqcprocess@gmail.com');
+    this.setenterEmail= function(UserN){
+        enterEmail.sendKeys(UserN);
     };
     this.clicknext = function(){
         next.click();
@@ -32,8 +34,8 @@ var MailPage = function(){
     this.clickenterPass = function(){
         enterPass.click();
     };
-    this.setenterPass= function(){
-        enterPass.sendKeys('sqcprocess123');
+    this.setenterPass= function(pW){
+        enterPass.sendKeys(pW);
     };
     this.clickpassNexts = function(){
         passNext.click();
@@ -44,9 +46,11 @@ var MailPage = function(){
         });
     }
     this.ReadCode=function(){       
-        emailHTML.getText().then(function(txt){
-            console.log('Our Code is : '+txt); 
-        });        
+        var cValue=emailHTML.getText().then(function(txt){
+            //console.log('Our Code is : '+txt);
+            return txt;
+        });  
+        return cValue;
     };
 
 
