@@ -16,6 +16,8 @@ var homePage = function() {
     var enterPassH = element(by.css('#password'));
     var loginButton = element(by.css('div > div > form > div > button > span'));
     var notification = element(by.css('#container > header > div > div._14lZ9._110yh > div._2sx1i > div > span'));
+    var expLog=element(by.css('#container > header > div > div > div> div > div > div > span >i'));
+    var logout=element(by.css('#container > header > div > div> div > div > div > ul > li > span'));
 
 /////////////////////////////////////////////////////Methots here///////////////////////////////////////////////////
     this.loadPage = function (){
@@ -57,7 +59,7 @@ var homePage = function() {
         searchButton.click();
     };
     
-    //////////////////////////////////////
+    ////////////////////////////////////// For Login Verification ///////////////////////////////////
     this.clickLoginH = function(){
         loginH.click();
     };
@@ -93,6 +95,12 @@ var homePage = function() {
     };
     this.getnotification=function(){
         return notification;
+    };
+    this.clickexpLog=function(){
+        expLog.click();
+    };
+    this.clicklogout=function(){
+        logout.click();
     };
 };
 module.exports = homePage;

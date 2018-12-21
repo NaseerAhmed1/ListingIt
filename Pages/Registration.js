@@ -54,9 +54,11 @@ var RegPage = function(){
     this.clickcreateAccount = function(){
         createAccount.click();
     };
-    this.getpassFormLoad= function(){
-        return passFormLoad;
-    };
+    this.getpassFormLoadTxt= function(){
+        passFormLoad.getText().then(function(texP){
+            console.log('Password form is loaded'+texP)
+        });
+    }
     this.getconfirmationForm= function(){
         return confirmationForm;
     };

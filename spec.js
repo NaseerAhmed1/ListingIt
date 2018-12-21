@@ -176,12 +176,12 @@ describe('olx searched listings itrator', function() {
             expect(listAdText).toContain(detailAdText);
         });
 
-        browser.sleep(15000); 
+        browser.sleep(5000); 
         */
     });
 
     it('User logged In - verfied', function () {
-        /*
+
         home.loadPage();
         browser.sleep(3000);
         //Verify important elements of Home page.
@@ -212,13 +212,17 @@ describe('olx searched listings itrator', function() {
         home.clickloginButton();
         browser.sleep(3000);
         expect(home.getnotification().isPresent()).toBe(true);
-
-        browser.sleep(20000); 
-        */
+        browser.sleep(3000);
+        home.clickexpLog();
+        browser.sleep(3000);
+        home.clicklogout();
+        browser.sleep(15000);
     });
     it('Verify Sign Up : User Registration completed', function () {
-        var uName= 'sqcprocess7@gmail.com';
+        
+        var uName= 'sqcprocess8@gmail.com';
         var password = 'sqcprocess123';
+        var match;
         //Go to home page
         home.loadPage();
         browser.sleep(3000);
@@ -248,21 +252,35 @@ describe('olx searched listings itrator', function() {
         reg.setpass(password);
         browser.sleep(3000);
         //if user is attempting for the 2nd time
-        home.clickloginButton(); 
-        
-        // if user is attempting for the first time.
-        reg.clickenterPassConfirm()
-        browser.sleep(3000);
-        reg.setPassConfirm(password);
-        browser.sleep(3000);
-        reg.clickcreateAccount();
-        browser.sleep(3000);
-        expect(reg.getconfirmationForm().isPresent()).toBe(true);
+        //home.clickloginButton(); 
+        var passW=reg.getpassFormLoad();
+        passW.getText().then(function(textP){
+            match=textP.toString().toLowerCase();
+            console.log('Password form is loaded : '+match);
+          }).then(function(){
+            if(match=='enter your password')
+            {
+            console.log('via Login ');
+            browser.sleep(3000);
+            home.clickloginButton(); 
+            browser.sleep(3000);
+            }
+            else{
+            console.log('via Security Code ');
+            reg.clickenterPassConfirm()
+            browser.sleep(3000);
+            reg.setPassConfirm(password);
+            browser.sleep(3000);
+            reg.clickcreateAccount();
+            browser.sleep(3000);
+            //expect(reg.getconfirmationForm().isPresent()).toBe(true);
+            };
+        });
 
         //Add wait for email to be recieved in your inbox.
         browser.sleep(60000);
 
-        /////////////////////////////////////////////////////////
+        //////////////////////////////Code for Reading email and Switching tabs///////////////////////////
         var securityCode;
         mail.loadEmailPage();
         browser.sleep(3000);
@@ -290,6 +308,8 @@ describe('olx searched listings itrator', function() {
                 browser.sleep(3000);
                 mail.clickpassNexts();
                 browser.sleep(3000); 
+                browser.driver.navigate().refresh();
+                browser.sleep(10000); 
                 mail.OpenInbox();
                 browser.sleep(5000);
                 //mail.ReadCode(); 
@@ -297,10 +317,8 @@ describe('olx searched listings itrator', function() {
                 var verificationC=mail.ReadCode();
                 verificationC.then(function(codeVal){
                     securityCode=codeVal;
-                    console.log('Verification code is :'+securityCode);
-                }).then(function(){
-                    console.log('Verification code After function :'+securityCode);
-                });
+                    //console.log('Verification code is :'+securityCode);
+                })
                 browser.driver.close();
             });
             //---------------------------------------
@@ -316,7 +334,29 @@ describe('olx searched listings itrator', function() {
             //--------------------------------------------    
         });
 
-        browser.sleep(200000); 
+        browser.sleep(20000); 
+        
+    });
+    it('Testing Here', function () {
+        /*
+        var uName= 'ryatt.orrin@plutofox.com';
+        var password = 'sapjh3D?';
+        var match;
+        //Go to home page
+        home.loadPage();
+        browser.sleep(3000);
+        //Verify important elements of Home page.
+        expect(home.getSearchButton().isPresent()).toBe(true);
+        browser.sleep(3000);
+        //click Login  getemailFormLoad
+        reg.clickLogin();
+        browser.sleep(3000);
+        expect(reg.loadloginForm().isPresent()).toBe(true);
+
+
+        browser.sleep(20000);
+        */
+
 
     });
 
