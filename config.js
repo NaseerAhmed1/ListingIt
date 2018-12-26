@@ -11,7 +11,7 @@ exports.config = {
 
     onPrepare: function() {
         browser.driver.manage().window().maximize();
-        browser.manage().window().setSize(1800, 1200);
+        //browser.manage().window().setSize(1800, 1200);
         
         var AllureReporter = require('./node_modules/jasmine-allure-reporter');
         jasmine.getEnv().addReporter(new AllureReporter({
