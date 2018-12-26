@@ -1,19 +1,19 @@
 var detailPage = function(){
     //Locators here 
-    var imageGallery = element(by.css('#container>main>div>div>div.rui-2SwH7.rui-m4D6f.rui-yyNoO.rui-3CPXI.rui-3E1c2.rui-1JF_2>div>div'));
+    var AdDesc = element(by.css('#container > main > div > div > div> section > div > div > div'));
 
-    var adDetailsImg = element(by.css('#container main>div>div>div.rui-2SwH7.rui-m4D6f.rui-yyNoO.rui-3CPXI.rui-3E1c2.rui-1JF_2>div >div'));
+    var sellerDetail= element(by.css('#container > main > div > div > div > div > div > div > h3 > span'));
 
     //var adDetailsText = element.all(by.className('_2FRXm'));
     var adDetailsText = element.all(by.className('_2wMiF'));
     var adLocation = element(by.className('_176bN'));
 
  /////////////////////////////////////////////////////Methots here///////////////////////////////////////////////////
-    this.getimageGallery = function(){
-        return imageGallery;
+    this.getadDescription = function(){
+        return AdDesc;
     };
-    this.getadDetailsImg = function(){
-        return adDetailsImg;
+    this.getsellerDetail= function(){
+        return sellerDetail;
     };
     this.getadLocation= function(){
         return adLocation;

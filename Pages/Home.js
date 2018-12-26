@@ -2,9 +2,9 @@ var homePage = function() {
     //Locators here
     var homeMdiddle=element(by.css('#container>main >div>section>div.rui-SB2Uw>div.rui-2SwH7.rui-2TiNk.rui-1RzHc.rui-3CPXI.rui-3E1c2.rui-1JF_2.HWxqG>div>div._32WNg>ul'));
     var homeBottom=element(by.css('#footer>div._2sI8Z>div>section.fRN33._2oZEg>div:nth-child(1)>a'));
-    var city = element(by.css('#container>header>div>div._2pd-7>div>div.IOsQD>div>input'));
-    var searchButton = element(by.css('#container>header>div>div._2pd-7>div>div._3b3oR>span'));
-    var productName = element(by.css('#container>header>div>div._2pd-7>div>div._2C0uj>form>fieldset>div>input'));
+    var city = element(by.css('#container > header > div > div > div > div > div> div > input'));
+    var searchButton = element.all(by.css('#container > header > div > div > div > div > div > span')).first();
+    var productName = element(by.css('#container > header > div > div> div > div > div > div > form > fieldset > div > input'));
     var expensionList = element.all(by.className('i20PQ')).first();
     ////////////////////////////////////////////////////////////////////
     var loginH = element(by.css('#container>header>div>div._14lZ9._110yh>span>span'));

@@ -9,12 +9,14 @@ var searchPage = function(){
     var aAdsFound = element(by.className('_2EwP3'));
     var seeMore = element(by.css('#container>main>div>section>div>div>div:nth-child(7)>div._1g25P>div>div.JbJAl>button'));
 
-    var city = element(by.css('#container>header>div>div._2pd-7>div>div.IOsQD>div>input'));
-    var allCategories = element(by.css('#container>header>div>div._2pd-7>div>div.rui-26lOJ._3c9A_>div'));
-    var categories = element.all(by.css('#container>header>div>div._2pd-7>div>div.rui-26lOJ._3c9A_>ul>li>div>div'));  
-    var cat = element(by.xpath('//*[@id="container"]/header/div/div[2]/div/div[2]/ul/li/div/div[15]/div[1]/div[2]'));
+    var city = element(by.css('#container > header > div > div > div > div > div> div > input'));
+    var allCategories = element.all(by.css('#container>header>div>div>div>div>div')).last();
+    var categoriesDD = element(by.css('#container > header > div > div > div > div> ul > li > div'));  
+    var catExp = element.all(by.css('#container > header > div > div> div > div > ul > li > div > div > div > div >span')).last();
+    var catKid = element.all(by.css('#container > header > div > div > div > div > ul > li > div > div > div > div> a')).get(12);
     var catSub = element(by.xpath('//*[@id="container"]/header/div/div[2]/div/div[2]/ul/li/div/div[15]/div[2]/div/div[1]/a/span'));
-    var searchButton = element(by.css('#container>header>div>div._2pd-7>div>div._3b3oR>span'));
+    var expensionList = element.all(by.className('i20PQ')).first();
+    var searchButton = element.all(by.css('#container > header > div > div > div > div > div'));
     var minPrice=element(by.css('div._3bdzO > div > input.range-input-min'));
     var maxPrice=element(by.css('div._3bdzO > div > input.range-input-max'));
     var priceSearch = element(by.css('div._3bdzO > div > a'));
@@ -42,19 +44,26 @@ var searchPage = function(){
     };
 
     this.selectCategory=function(){
-        cat.click();
+        browser.executeScript("arguments[0].scrollIntoView();", catExp.getWebElement());
+        browser.sleep(3000);
+
+        catExp.click()
+        //browser.sleep(3000);
+
     };
     this.selectSubCategory=function(){
         catSub.click();
     };
 
     this.clicksearchButton = function(){
-        searchButton.click();
+        searchButton.get(2).click();
     };
     this.getbreadcrumb = function(){
         return breadcrumb;
     };
-    
+    this.selectCity=function(){
+        expensionList.click();
+    };
     //Function for iterating each card and will verify search text in card.
     this.verifyPageAds= function(searchW) {
 
@@ -117,7 +126,7 @@ var searchPage = function(){
     };
 
     /////////////////////////////////////////////////////////////////
-    
+
     this.verifyAdsPriceRange= function(min,max) {
 
         searchedAdsPrice.then(function(items){
@@ -147,7 +156,7 @@ var searchPage = function(){
 
             function verifyPriceAd(i) {
                 items[i].getText().then(function(textValue){
-                                    
+
                     var value=textValue.toString().toLowerCase();
                     var subst=textValue.substr(3,8);
                     var adPrice = parseInt(subst.replace(/,/g, ''));
@@ -157,11 +166,11 @@ var searchPage = function(){
                     }
                     else
                     {
-                        
+
                         expect(adPrice).toBeGreaterThan(1999);
                         expect(adPrice).toBeLessThan(3001);
                         console.log(i+'Ad Price are within the range');  
-                       
+
                     }
 
                 });
@@ -169,7 +178,7 @@ var searchPage = function(){
 
         });
     };
-    
+
     ////////////////////////////////////////////////////////////////
     this.clickSpecificAd=function(a){
         searchedAds.then(function(items){
