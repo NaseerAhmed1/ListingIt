@@ -44,15 +44,10 @@ var searchPage = function(){
     };
 
     this.selectCategory=function(){
-        browser.executeScript("arguments[0].scrollIntoView();", catExp.getWebElement());
-        browser.sleep(3000);
-
-        catExp.click()
-        //browser.sleep(3000);
-
+            browser.executeScript("arguments[0].click();", catExp);
     };
     this.selectSubCategory=function(){
-        catSub.click();
+        browser.executeScript("arguments[0].click();", catSub);
     };
 
     this.clicksearchButton = function(){
