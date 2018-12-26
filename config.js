@@ -10,8 +10,10 @@ exports.config = {
     getPageTimeout: 30000,
 
     onPrepare: function() {
+        browser.driver.manage().window().maximize();
+        browser.manage().window().setSize(1800, 1200);
+        
         var AllureReporter = require('./node_modules/jasmine-allure-reporter');
-        browser.manage().window().setSize(1600, 1000);
         jasmine.getEnv().addReporter(new AllureReporter({
             allureReport: {
                 resultsDir: 'allure-results'
@@ -51,7 +53,7 @@ exports.config = {
             customProcessors: []
         }));
 
-      
+
     },
 
 

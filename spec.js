@@ -3,6 +3,7 @@ var searchPage = require('./pages/Search.js');
 var detailPage = require('./pages/Detail.js');
 var regPage = require('./pages/Registration.js');
 var mailPage = require('./pages/Mail.js');
+var sgpt = require('sg-protractor-tools');
 
 describe('olx searched listings itrator', function() {
     browser.ignoreSynchronization = true;
@@ -23,7 +24,9 @@ describe('olx searched listings itrator', function() {
         browser.sleep(3000);
         //Verify important elements of Home page.
         expect(home.getSearchButton().isPresent()).toBe(true);
+        browser.sleep(1000);
         expect(home.gethomeMdiddle().isPresent()).toBe(true);
+        browser.sleep(1000);
         expect(home.gethomeBottom().isPresent()).toBe(true);
 
         //Go to search page
@@ -38,7 +41,9 @@ describe('olx searched listings itrator', function() {
         browser.sleep(3000); 
         //Verify important elements of Search page.
         expect(search.getpopularSearches().isPresent()).toBe(true);
+        browser.sleep(1000);
         expect(search.getcategories().isPresent()).toBe(true);
+        browser.sleep(1000);
         expect(search.getseeMore().isPresent()).toBe(true); 
 
         //Go to detail page
@@ -46,8 +51,10 @@ describe('olx searched listings itrator', function() {
         search.clickSpecificAd(0);
         browser.sleep(5000);
         //Verify important elements of Search page.
-        expect(detail.getimageGallery().isPresent()).toBe(true);
-        expect(detail.getadDetailsImg().isPresent()).toBe(true);
+        expect(detail.getadDescription().isPresent()).toBe(true);
+        browser.sleep(1000);
+        expect(detail.getsellerDetail().isPresent()).toBe(true);
+        browser.sleep(1000);
         expect(detail.getadLocation().isPresent()).toBe(true); 
         browser.sleep(5000); 
         */
@@ -81,10 +88,11 @@ describe('olx searched listings itrator', function() {
         */
     }); 
     it('Verify Filters : Filters on search page are verified', function() {
-        /*
+        
         //Go to search page
         home.loadPage();
         browser.sleep(3000);
+       
         home.clickCity();
         browser.sleep(3000);
         home.selectCity();
@@ -99,27 +107,36 @@ describe('olx searched listings itrator', function() {
         browser.sleep(3000);
         search.setCity("Lahore");
         browser.sleep(3000);
+        search.selectCity();
+        browser.sleep(3000);
         search.clicksearchButton();
         browser.sleep(3000);
         //Verify first 20 ads
         var args1 = ['lahore'];
         search.verifyPageAds(args1);
+        /*
         //Verify Category Filters
+        browser.get('https://www.olx.com.pk/lahore_g4060673');
         browser.sleep(3000);
         search.clickAllCategory();
         browser.sleep(3000);
+        
         search.selectCategory();
-        browser.sleep(3000);      
-        search.selectSubCategory();
+        browser.sleep(3000); 
+
+        //search.selectSubCategory();
+        browser.sleep(30000);
+        //search.clicksearchButton();
         browser.sleep(3000);
-        search.clicksearchButton();
-        browser.sleep(3000);
+        
         //Verify kids furniture
         var args2 = ["kid","bed","furniture"];
         search.verifyPageAds(args2);
         //search.verifyPageAds.apply(args2);
         //search.getbreadcrumb();
         //expect(search.getbreadcrumb().getText()).toContain('Kids Furniture');
+        */
+        
         //verify Price filters
         browser.sleep(3000);
         search.clickMinPrice();
@@ -135,7 +152,7 @@ describe('olx searched listings itrator', function() {
         browser.sleep(3000);
         search.verifyAdsPriceRange(2000,3000);
         browser.sleep(3000); 
-        */
+        
     });
     // made search for any product
     it('Verify Listings : Detail view of the ad is verified', function() {
@@ -181,7 +198,7 @@ describe('olx searched listings itrator', function() {
     });
 
     it('User logged In - verfied', function () {
-
+        /*
         home.loadPage();
         browser.sleep(3000);
         //Verify important elements of Home page.
@@ -217,9 +234,10 @@ describe('olx searched listings itrator', function() {
         browser.sleep(3000);
         home.clicklogout();
         browser.sleep(15000);
+        */
     });
     it('Verify Sign Up : User Registration completed', function () {
-        
+        /*
         var uName= 'sqcprocess8@gmail.com';
         var password = 'sqcprocess123';
         var match;
@@ -335,7 +353,7 @@ describe('olx searched listings itrator', function() {
         });
 
         browser.sleep(20000); 
-        
+        */
     });
     it('Testing Here', function () {
         /*
