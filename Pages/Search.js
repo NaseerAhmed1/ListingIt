@@ -44,7 +44,7 @@ var searchPage = function(){
     };
 
     this.selectCategory=function(){
-            browser.executeScript("arguments[0].click();", catExp);
+        browser.executeScript("arguments[0].click();", catExp);
     };
     this.selectSubCategory=function(){
         browser.executeScript("arguments[0].click();", catSub);
@@ -54,7 +54,11 @@ var searchPage = function(){
         searchButton.get(2).click();
     };
     this.getbreadcrumb = function(){
-        return breadcrumb;
+        breadcrumb.getText().then(function(textS){
+            //console.log("search text :"+textS);
+            expect(textS).toContain('Kids Furniture');
+            
+        });
     };
     this.selectCity=function(){
         expensionList.click();

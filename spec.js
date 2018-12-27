@@ -88,11 +88,10 @@ describe('olx searched listings itrator', function() {
         */
     }); 
     it('Verify Filters : Filters on search page are verified', function() {
-       
+
         //Go to search page
         home.loadPage();
         browser.sleep(3000);
-       
         home.clickCity();
         browser.sleep(3000);
         home.selectCity();
@@ -114,28 +113,21 @@ describe('olx searched listings itrator', function() {
         //Verify first 20 ads
         var args1 = ['lahore'];
         search.verifyPageAds(args1);
-              
+
         //Verify Category Filters
         browser.sleep(3000);
         search.clickAllCategory();
         browser.sleep(3000);
-        
         search.selectCategory();
         browser.sleep(3000); 
-        
         search.selectSubCategory();
-        browser.sleep(30000);
-        search.clicksearchButton();
         browser.sleep(3000);
-        
         //Verify kids furniture
         var args2 = ["kid","bed","furniture"];
         search.verifyPageAds(args2);
-       
-        //console.log("search text :"+search.getbreadcrumb().getText())
-        //expect(search.getbreadcrumb().getText()).toContain('Kids Furniture');
-        
-        /*
+        browser.sleep(3000);
+        search.getbreadcrumb();
+     
         //verify Price filters
         browser.sleep(3000);
         search.clickMinPrice();
@@ -151,7 +143,7 @@ describe('olx searched listings itrator', function() {
         browser.sleep(3000);
         search.verifyAdsPriceRange(2000,3000);
         browser.sleep(3000); 
-        */
+       
     });
     // made search for any product
     it('Verify Listings : Detail view of the ad is verified', function() {
